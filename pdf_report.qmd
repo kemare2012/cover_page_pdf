@@ -1,0 +1,193 @@
+---
+title: "A Paper - Panel Data"
+bibliography: references2.bib 
+csl: apa.csl # downloaded from zotero 
+link-citations: true
+nocite: '@*'  # wildcard to use all citations
+format:
+  pdf:
+    include-in-header:
+      - text: |
+         \usepackage{lipsum}  
+         \usepackage{amsfonts}
+         \usepackage{amsmath}
+         \usepackage{geometry}
+         \usepackage{xcolor}
+         \usepackage{eso-pic}
+         \usepackage{fancyhdr}
+         \lhead{ \fancyplain{}{April 2024} }
+         \rhead{\includegraphics[width = .05\textwidth]{eccblogo.png}}
+         \usepackage{sectsty}
+         \usepackage{fontspec}
+         \usepackage{titlesec}
+         \definecolor{light}{HTML}{E6E6FA}
+         \definecolor{highlight}{HTML}{800080}
+         \definecolor{dark}{HTML}{330033}
+         \bibliographystyle{apa}
+    citation_package: biblatex
+    toc: true
+    toc-title: Contents
+    number-sections: true
+    documentclass: report
+    classoption: [twocolumn]
+    lof: true  #list of figures
+    lot: true    #list of tables
+    fig-width: 3.5
+    fig-height: 3
+    fig-dpi: 700
+    embed-resources: true
+    fontsize: 1.1em
+    title-block-banner: true
+    search: true
+    linestretch: 1.5 
+    sansfontoptions: 
+      - Color='#000090'
+    cite-method: biblatex
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    mainfont: Times New Roman
+    link-citations: true
+    colorlinks: false
+execute:
+  echo: false  
+---
+
+## Quarto{-}
+
+\lipsum{1-4}
+
+## Running Code{-}
+
+\lipsum{2-5}
+
+```{r}
+1 + 1
+```
+
+\lipsum{2}
+
+
+Text can be[@surden2021machine] rendered *in italic* or **in bold** as well as [underlined text]{.underline}.
+
+You can use superscripts^2^, subscripts~test~, ~~strikethrough~~, and `inline code`.
+
+> This is a quote.
+
+```{r}
+#| echo: true
+2 * 2
+```
+
+\lipsum{2-4}
+
+### Charts{-}
+
+You can use `ggplot2`\footnote{You can install it with install.packages} for charts
+
+```{r}
+#| echo: true
+#| warning: false
+#| message: false
+
+library(ggplot2)
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class)) + 
+  geom_smooth()+
+  theme_light()
+```
+
+
+### Images{-}
+
+![Example image](wind.jpg)
+
+
+\newpage
+
+
+### Equations{-}
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+$$
+
+This summation expression $\sum_{i=1}^n X_i$ appears inline.
+
+We indicate a square root using the \\sqrt operator such as
+$\sqrt{b^2 - 4ac^3}$
+
+These summation expressions are in display form and are written within a pair of dollar signs using the LaTeX syntax, e.g.
+
+$$\sum_{n=1}^{10} n^2$$ $$x = y $$ $$x \le y $$ $$x \ge y $$
+
+
+$$x^{n}$$
+
+$$x_{n}$$
+
+
+$$\overline{x}$$
+
+
+$$\hat{x}$$
+
+
+$$\tilde{x}$$
+
+
+$$\frac{a}{b}$$
+
+
+$$\frac{\partial f}{\partial x}$$ $$x_{1} + x_{2} + \cdots + x_{n}$$
+
+$$x_{1}, x_{2}, \dots, x_{n}$$
+
+
+In LaTeX, you can create parentheses, brackets, and braces which size themselves automatically to contain large expressions. You do this using the backslash `left` and `right` operators. Here is an example
+
+$$\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)$$
+
+### Greek letters{-}
+
+$$\delta \Delta$$
+
+$$\lambda \Lambda$$
+
+$$\alpha, \beta,  \gamma, \Gamma$$
+
+### Alignment and Numbering{-}
+
+This is an equation:
+
+$$
+y = mx + b
+$$ {#eq-y}
+
+
+$$ 
+invest_{it}  = \beta_{0} + \beta_{1}value_{it} + \beta_{2}+ capital_{it}  + \alpha_{i} + \delta_{t} + \epsilon_{it}
+$$ {#eq-inv}
+
+Another equation:
+
+$$
+E = mc^2
+$$ {#eq-eins}
+
+And we can refer to equation @eq-eins as well.
+
+$$ 
+price = \hat{\beta}_0 + \hat{\beta}_1 \times area + \epsilon 
+$$ {#eq-pr}
+
+
+\newpage
+
+
+## References {#refs}
+
+::: {#refs} 
+:::

@@ -1,0 +1,35 @@
+---
+title: "Untitled"
+output: 
+  pdf_document:
+    extra_dependencies: ["tcolorbox", "tikz"]
+---
+```{r, include=FALSE}
+library(tidyverse)
+```
+
+\tcolorbox[colback=blue!5!white,colframe=blue!75!black,title=Box 1: Recent FDI Trends in Thailand]  
+
+Promoting FDI in targeted innovative sectors, as identified in the 20-year National Strategy, remains a priority of the new government. FDI plays an important role for boosting Thailand’s innovation capacity as it is concentrated in skills-intensive sectors that spend more on R&D (WB Thailand Manufacturing Productivity Report 2020). FDI can serve as a channel for the international transfer of environmentally friendly technologies and practices and thus catalyze the process of decarbonization faster than domestic firms (See Javorcik et al. 2019 and Chapter 2 on Carbon Pricing).
+
+After turning negative during the pandemic, FDI inflows to Thailand have been positive for the last two years, surpassing the pre-pandemic level. According to UNCTAD World Investment Report 2023, FDI inflows amounted to USD 10 billion in 2022, a decrease of 31.5 percent compared to 2021, but still much higher than the USD -4.9 billion in 2020 during the Covid-19 pandemic (Figure 14). In part, this followed the significant downward pressures on global FDI due to the food, fuel and finance crises around the world, the Ukraine war, rising inflation and interest rates, and fears of a coming recession. Furthermore, Thailand was ranked 34th globally for the FDI inflows in 2022, ahead of the Philippines and Cambodia, but behind other regional peers like Indonesia, Malaysia and Vietnam, (Figure 15). Against this backdrop, the number of announced greenfield projects and international project finance deals in 2022 increased significantly compared to the previous year, by 15 and 70 percent, respectively.
+
+```{r,results='asis', message=FALSE, echo=FALSE,  message=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+iris %>% 
+  group_by(Species) %>% 
+  summarise(mean = mean(Sepal.Length), 
+            sd = sd(Sepal.Width))
+```
+
+```{r, message=FALSE, echo=FALSE,  message=FALSE, eval=TRUE, message=FALSE, warning=FALSE, results='asis'}
+ggplot(iris, aes(Sepal.Length, Sepal.Width, colors = Species)) +
+    geom_point()+
+  theme_classic()+ 
+  theme(
+        plot.background = element_rect(fill="lightblue"),
+        panel.background = element_rect(fill="lightblue"))
+```
+
+Manufacturing is driving Thailand’s FDI inflows. According to Thailand’s Board of Investment (BOI), the value of approved foreign investment projects in 2022 increased by 14.2 percent compared the previous year. The total approved projects reached 320 billion baht (or USD 9.1 billion) (Figure 16). Foreign direct investments (FDI) in 2022 proved largest in metal products and machineries, followed by electric and electronic products as well as services, with a share of 26, 25 and 18 percent of total FDI, respectively. The big four investors included Japan, Taiwan, China, and USA. Lately, investment applications approved by the Board of Investment from January until September this year have shifted towards electrical appliances and electronics as well as electric vehicles (Figure 17).
+```
+\endtcolorbox
